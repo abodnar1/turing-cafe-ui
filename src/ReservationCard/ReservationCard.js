@@ -3,8 +3,14 @@ import "./ReservationCard.css";
 
 const ReservationCard = () => {
   return (
-    <h1>CARD!</h1>
+    <div className="card-wrapper">
+      <h2 className="name">NAME</h2>
+      <p className="card-details">DATE</p>
+      <p className="card-details">TIME PM</p>
+      <p className="card-details">NUMBER GUESTS</p>
+      <button className="cancel-button">Cancel</button>
+    </div>
   )
-}
+};
 
 export default ReservationCard;
