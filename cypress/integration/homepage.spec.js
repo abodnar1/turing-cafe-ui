@@ -15,10 +15,17 @@ describe("Homepage flow", () => {
   });
 
   it("A user should see what they have typed into the form", () => {
-    cy.get("input[name='name']")
-    .type("Amber")
-    .get("input[name='number']")
-    .type("4")
+    cy.get("input[name='name']").type("Amber")
+    .get("input[name='number']").type("4")
   });
 
+  it("A user should fill out form, click the button, and see their reservation", () => {
+    cy.get("input[name='name']").type("Amber")
+    .get("input[name='date']").type("2022-07-23")
+    .get("input[name='time']").type("5:45")
+    .get("input[name='number']").type("4")
+    .get("button").first().click()
+    .get("h2").should("have.class", "name")
+    .get("button").should("have.class", "cancel-button")
+  });
 });
