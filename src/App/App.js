@@ -6,7 +6,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      reservations: [],
+      allReservations: [],
       error: ""
     };
   }
@@ -21,7 +21,7 @@ class App extends Component {
           return this.setState({error: "Error, please try again"})
         }
       })
-      .then(data => this.setState({reservations: data}))
+      .then(data => this.setState({allReservations: data}))
       .catch(err => {
         console.log("Error");
         return this.setState({error: "Error, please try again"})
@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.reservations)
+    console.log(this.state.allReservations)
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
@@ -37,7 +37,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          <ReservationsContainer />
+          <ReservationsContainer allReservations={this.state.allReservations}/>
 
         </div>
       </div>
