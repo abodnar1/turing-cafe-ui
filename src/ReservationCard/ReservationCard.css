@@ -4,7 +4,11 @@
   flex-direction: column;
   color:#007E7F;
   background-color: #FFFFFF;
-  border: 2px solid #007E7F;
+  border: 3px solid #007E7F;
+  border-radius: 2%;
+  height: 16em;
+  width: 18em;
+  margin: 2em;
 }
 
 .cancel-button {
