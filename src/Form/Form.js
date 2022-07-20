@@ -8,7 +8,7 @@ class Form extends Component {
       name: "",
       date: "",
       time: "",
-      numGuests: ""
+      number: ""
     };
   }
 
@@ -26,7 +26,7 @@ class Form extends Component {
       name: this.state.name,
       date: this.state.date,
       time: this.state.time,
-      numGuests: this.state.numGuests
+      number: parseInt(this.state.number)
     };
 
     this.props.addRes(newRes);
@@ -38,7 +38,7 @@ class Form extends Component {
       name: "",
       date: "",
       time: "",
-      numGuests: ""
+      number: ""
     });
   };
 
@@ -68,9 +68,9 @@ class Form extends Component {
         />
         <input
           type="text"
-          name="numGuests"
+          name="number"
           placeholder="Number of guests"
-          value={this.state.numGuests}
+          value={this.state.number}
           onChange={event => this.handleChange(event)}
         />
         <button className="make-res-button-" onClick={event => this.submitRes(event)}>Make Reservation</button>

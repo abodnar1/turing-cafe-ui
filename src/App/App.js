@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   addRes = (newRes) => {
-    console.log("button works!");
+    this.setState({allReservations: [...this.state.allReservations, newRes]});
     console.log(newRes);
   };
 
