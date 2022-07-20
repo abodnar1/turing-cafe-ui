@@ -14,4 +14,11 @@ describe("Homepage flow", () => {
     .get("h2").should("have.class", "name")
   });
 
+  it("A user should see what they have typed into the form", () => {
+    cy.get("input[name='name']")
+    .type("Amber")
+    .get("input[name='number']")
+    .type("4")
+  });
+
 });
