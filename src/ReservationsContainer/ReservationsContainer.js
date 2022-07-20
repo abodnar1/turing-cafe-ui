@@ -12,14 +12,13 @@ const ReservationsContainer = ({ allReservations }) => {
         name={reservation.name}
         date={reservation.date}
         time={reservation.time}
-        number={reservation.number}
+        numGuests={reservation.number}
       />
     )
   });
 
   return (
     <div>
-      <h1>CONTAINER!</h1>
       {reservations}
     </div>
   )

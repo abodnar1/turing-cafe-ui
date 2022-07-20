@@ -34,11 +34,10 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-
+            <p>FORM WILL GO HERE</p>
         </div>
         <div className='resy-container'>
           <ReservationsContainer allReservations={this.state.allReservations}/>
-
         </div>
       </div>
     )

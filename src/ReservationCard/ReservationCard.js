@@ -1,13 +1,13 @@
 import React from "react";
 import "./ReservationCard.css";
 
-const ReservationCard = () => {
+const ReservationCard = ({ id, name, date, time, numGuests }) => {
   return (
     <div className="card-wrapper">
-      <h2 className="name">NAME</h2>
-      <p className="card-details">DATE</p>
-      <p className="card-details">TIME PM</p>
-      <p className="card-details">NUMBER GUESTS</p>
+      <h2 className="name">{name}</h2>
+      <p className="card-details">{date}</p>
+      <p className="card-details">{time} PM</p>
+      <p className="card-details">Number of guests: {numGuests}</p>
       <button className="cancel-button">Cancel</button>
     </div>
   )
