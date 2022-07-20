@@ -29,13 +29,18 @@ class App extends Component {
       })
   }
 
+  addRes = (newRes) => {
+    console.log("button works!");
+    console.log(newRes);
+  };
+
   render() {
     console.log(this.state.allReservations)
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <Form />
+          <Form addRes={this.addRes}/>
         </div>
         <div className='resy-container'>
           <ReservationsContainer allReservations={this.state.allReservations}/>
