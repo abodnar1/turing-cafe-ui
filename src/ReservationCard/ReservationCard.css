@@ -1,0 +1,15 @@
+.card-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color:#007E7F;
+  background-color: #FFFFFF;
+  border: 2px solid #007E7F;
+}
+
+.cancel-button {
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #007E7F;
+  width: 13em;
+}
