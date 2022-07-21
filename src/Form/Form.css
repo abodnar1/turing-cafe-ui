@@ -4,3 +4,8 @@
   background-color: #007E7F;
   width: 13em;
 }
+
+.form-error-message {
+  color: red;
+  font-size: 3em;
+}
