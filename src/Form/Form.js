@@ -34,7 +34,7 @@ class Form extends Component {
       time: this.state.time,
       number: parseInt(this.state.number)
     };
-    console.log(newRes)
+
     this.props.addRes(newRes);
     this.clearForm();
   }
