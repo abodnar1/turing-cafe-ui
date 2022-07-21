@@ -6,9 +6,9 @@
   background-color: #FFFFFF;
   border: 3px solid #007E7F;
   border-radius: 2%;
-  height: 16em;
-  width: 18em;
-  margin: 2em;
+  height: 15em;
+  width: 15em;
+  margin: 1em;
 }
 
 .cancel-button {
@@ -16,4 +16,14 @@
   color: #FFFFFF;
   background-color: #007E7F;
   width: 13em;
+}
+
+.card-details {
+  padding: 0;
+  margin: .5em;
+}
+
+.cancel-button {
+  margin-top: 1em;
+  width: 
 }

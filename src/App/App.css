@@ -10,17 +10,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
+  overflow: hidden;
 }
 
 .app-title {
   color: teal;
   font-family: 'Pacifico', cursive;
   font-size: 50px;
-}
-
-.resy-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
 }

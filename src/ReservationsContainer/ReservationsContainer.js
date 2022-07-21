@@ -18,7 +18,7 @@ const ReservationsContainer = ({ allReservations }) => {
   });
 
   return (
-    <div>
+    <div className="all-cards">
       {reservations}
     </div>
   )
