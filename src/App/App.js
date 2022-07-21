@@ -51,6 +51,27 @@ class App extends Component {
     })
   };
 
+  deleteRes = (id) => {
+    const filteredReservations = this.state.allReservations.filter(reservation => reservation.id !== id);
+
+    this.setState({allReservations: filteredReservations});
+
+    return fetch(`http://localhost:3001/api/v1/reservations/${id}`, {
+      method: "DELETE",
+    })
+    .then(res => {
+      if(res.ok) {
+        res.text();
+        console.log("reservation deleted");
+        window.alert("Your reservation has been deleted.")
+      } else {
+        console.log("No reservation with that id found. Please try again");
+        window.alert("No reservation with that id found. Please try again.")
+        return this.setState({error: "No reservation with that id found. Please try again"});
+      }
+    })
+  };
+
   render() {
     return (
       <div className="App">
@@ -59,7 +80,7 @@ class App extends Component {
           <Form addRes={this.addRes}/>
         </div>
         <div className='resy-container'>
-          <ReservationsContainer allReservations={this.state.allReservations}/>
+          <ReservationsContainer allReservations={this.state.allReservations} deleteRes={this.deleteRes}/>
         </div>
       </div>
     )
