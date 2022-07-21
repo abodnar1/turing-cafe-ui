@@ -24,11 +24,11 @@ class Form extends Component {
     const newRes = {
       id: Date.now(),
       name: this.state.name,
-      date: this.state.date,
+      date: this.state.date.slice(5).replace("-", "/"),
       time: this.state.time,
       number: parseInt(this.state.number)
     };
-
+    console.log(newRes)
     this.props.addRes(newRes);
     this.clearForm();
   }
