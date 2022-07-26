@@ -8,7 +8,8 @@ class App extends Component {
     super()
     this.state = {
       allReservations: [],
-      error: ""
+      error: "",
+      deleteMessage: ""
     };
   }
 
@@ -30,10 +31,7 @@ class App extends Component {
   }
 
   addRes = (newRes) => {
-    this.setState({allReservations: [...this.state.allReservations, newRes]});
-    console.log(newRes);
-
-    return fetch("http://localhost:3001/api/v1/reservations", {
+    fetch("http://localhost:3001/api/v1/reservations", {
       method: "POST",
       body: JSON.stringify(newRes),
       headers: {
@@ -42,31 +40,30 @@ class App extends Component {
     })
     .then(res => {
       if(res.ok) {
+        this.setState({allReservations: [...this.state.allReservations, newRes]});
         return res.json();
       } else {
         console.log("Error");
-        window.alert("Error, reservation not made. Please try again.")
         return this.setState({error: "Error, please try again."});
       }
     })
   };
-
+  
   deleteRes = (id) => {
-    const filteredReservations = this.state.allReservations.filter(reservation => reservation.id !== id);
-
-    this.setState({allReservations: filteredReservations});
-
-    return fetch(`http://localhost:3001/api/v1/reservations/${id}`, {
+    fetch(`http://localhost:3001/api/v1/reservations/${id}`, {
       method: "DELETE",
     })
     .then(res => {
       if(res.ok) {
-        res.text();
+        const filteredReservations = this.state.allReservations.filter(reservation => reservation.id !== id);
+        this.setState({
+          allReservations: filteredReservations,
+          deleteMessage: "Your reservation was deleted"
+        });
         console.log("reservation deleted");
-        window.alert("Your reservation has been deleted.")
+        return res.text();
       } else {
         console.log("No reservation with that id found. Please try again");
-        window.alert("No reservation with that id found. Please try again.")
         return this.setState({error: "No reservation with that id found. Please try again"});
       }
     })
@@ -79,6 +76,7 @@ class App extends Component {
         <div className='resy-form'>
           <Form addRes={this.addRes}/>
         </div>
+        {this.state.deleteMessage && <p className="delete-message">{this.state.deleteMessage}</p>}
         <div className='resy-container'>
           <ReservationsContainer allReservations={this.state.allReservations} deleteRes={this.deleteRes}/>
         </div>
